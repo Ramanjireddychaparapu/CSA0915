@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+class ArrayTest {
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter size of the array: ");
+        int n = scan.nextInt();
+        int numbers[] = new int[n];
+
+        System.out.println("Enter array elements: ");
+        for (int i = 0; i < n; ++i) {
+            numbers[i] = scan.nextInt();
+        }
+
+
+        displayNegative(numbers);
+
+
+        scan.close();
+
+    }
+
+
+    public static void displayNegative(int[] numbers) {
+        boolean flag = false;
+        int i = 0;
+        for (i = 0; i < numbers.length; i++) {
+            if(numbers[i] < 0){
+                flag = true;
+                break;
+            }
+        }
+        if(!flag) {
+            System.out.println("Array doesn’t contain negative number.");
+            return;
+        }
+
+        System.out.println("Negative numbers = ");
+        for (; i < numbers.length; i++) {
+            if(numbers[i] < 0) {
+                System.out.print(numbers[i]+" ");
+            }
+        }
+    }
+}
