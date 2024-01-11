@@ -1,0 +1,20 @@
+import java.lang.reflect.Method;
+
+  class NoSuchMethodExample {
+    public static void main(String[] args) {
+
+        MyClass myObject = new MyClass();
+
+        try {
+
+            Method nonExistentMethod = MyClass.class.getDeclaredMethod("nonExistentMethod");
+        } catch (NoSuchMethodException e) {
+
+            e.printStackTrace();
+        }
+    }
+}
+
+class MyClass {
+
+}
